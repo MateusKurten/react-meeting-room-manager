@@ -21,7 +21,7 @@ export default function Reservation({description, category, start, end, id, setR
 
     async function handleDelete() {
         await deleteReservation(id);
-        setReservationId(null);
+        setReservationId(id);
     }
 
     return (
