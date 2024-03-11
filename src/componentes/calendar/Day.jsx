@@ -1,7 +1,7 @@
 import React from "react";
 import Reservation from "./Reservation";
 
-export default function Day({ title, reservations = [], setReservationId }) {
+export default function Day({ title, reservations = [], setReservationId, reservationId }) {
 
     return (
         <div className="flex flex-col min-w-48">
@@ -10,7 +10,7 @@ export default function Day({ title, reservations = [], setReservationId }) {
                 {
                     reservations.map((item, index) => (
                         <React.Fragment key={"reservation-" + index}>
-                            <Reservation {...item} setReservationId={setReservationId}/>
+                            <Reservation {...item} reservationId={reservationId} setReservationId={setReservationId}/>
                         </React.Fragment>
                     ))
                 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { deleteReservation } from "../../infra/reservations";
 
-export default function Reservation({description, category, start, end, id, setReservationId}) {
+export default function Reservation({description, category, start, end, id, setReservationId, reservationId}) {
     let bgColor;
 
     switch (category) {
@@ -21,7 +21,7 @@ export default function Reservation({description, category, start, end, id, setR
 
     async function handleDelete() {
         await deleteReservation(id);
-        setReservationId(id);
+        reservationId == id ? setReservationId(null) : setReservationId(id);
     }
 
     return (

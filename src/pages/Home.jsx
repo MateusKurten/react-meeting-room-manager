@@ -50,7 +50,7 @@ export default function Home() {
             <div className="flex flex-wrap">
                 {
                     Object.keys(reservations).map(key => 
-                        <Day title={key} reservations={reservations[key]} setReservationId={setReservationId}/>
+                        <Day title={key} reservations={reservations[key]} reservationId={reservationId} setReservationId={setReservationId}/>
                     )
                 }
             </div>
